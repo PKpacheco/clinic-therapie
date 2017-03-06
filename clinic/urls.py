@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^categories/', include('categories.urls', namespace='categories')),
     url(r'^doctors/', include('doctors.urls', namespace='doctors')),
     url(r'^patients/', include('patients.urls', namespace='patients')),
-    url(r'^therapies/', include('therapies.urls', namespace='events')),
+    url(r'^therapies/', include('therapies.urls', namespace='therapies')),
+    url(r'^appointments/', include('appointments.urls', namespace='appointments')),
 ]

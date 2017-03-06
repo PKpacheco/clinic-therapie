@@ -1,5 +1,7 @@
-from django.contrib import admin
-from .models import Person, Child
+# coding:utf-8
 
-admin.register(Person)
-admin.register(Child)
+from django.contrib import admin
+from .models import Category
+
+
+admin.site.register(Category)

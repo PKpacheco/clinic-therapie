@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'appointments'
     'categories',
     'doctors',
     'patients',
@@ -135,6 +136,8 @@ SUIT_CONFIG = {
         {'app': 'doctors', 'label': 'Medicos'},
         {'app': 'patients', 'label': 'Pessoas'},
         {'app': 'therapies', 'label': 'Terapias'},
+        {'app': 'appointments', 'label': 'Consultas'},
+
 
     ),
 }
