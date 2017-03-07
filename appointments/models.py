@@ -3,13 +3,13 @@ from django.db import models
 
 
 class Appointment(models.Model):
-    doctors = models.Primarykey('doctors.Doctor', blank=True, verbose_name="Médico")
-    terapy = models.Primarykey('categories.Category', blank=True, verbose_name="Categoria")
+    therapie = models.ForeignKey('therapies.Therapie', blank=True, verbose_name="Terapia")
+    child = models.ForeignKey('patients.Child', blank=True, verbose_name="Paciente")
 
     def __unicode__(self):
-        return self.name
+        return str(self.child)
 
     class Meta:
-        verbose_name = 'Categoria'
-        verbose_name_plural = 'Categorias'
-        ordering = ['name']
+        verbose_name = 'Consulta'
+        verbose_name_plural = 'Consultas'
+        ordering = ['therapie']

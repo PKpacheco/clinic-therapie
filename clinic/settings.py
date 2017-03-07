@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'appointments'
+    'appointments',
     'categories',
     'doctors',
     'patients',

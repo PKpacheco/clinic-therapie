@@ -45,11 +45,21 @@ class Person(models.Model):
         ordering = ['name']
 
 
+class DoctorChild(models.Model):
+    name = models.ForeignKey('doctors.Doctor', max_length=255, verbose_name="nome do médico")
+    category = models.ForeignKey('categories.Category', max_length=255, verbose_name="categoria do médico")
+
+    def __unicode__(self):
+        return str(self.name)
+
+
 class Child(models.Model):
     name = models.CharField(max_length=255, verbose_name="nome da criança")
     age = models.CharField(max_length=10, blank=True, null=True)
     date_birth = models.DateField(verbose_name='Data de Nascimento', blank=True, null=True)
     person = models.ForeignKey(Person, blank=True, null=True, related_name='children', verbose_name="Responsável")
+    doctors = models.ManyToManyField('DoctorChild', blank=True, null=True,
+                                     related_name='doctors', verbose_name="Médico")
 
     def __unicode__(self):
         return self.name

@@ -34,8 +34,7 @@ class Doctor(models.Model):
     email = models.EmailField(max_length=255, blank=True, null=True, verbose_name='email')
     address = models.CharField(max_length=15, null=True, blank=True, verbose_name='endereço')
     city = models.CharField(max_length=15, choices=CITY, null=True, blank=True, verbose_name='Cidade')
-    category = models.ManyToManyField('categories.Category', blank=True,
-                                      related_name='doctor', verbose_name="Categoria")
+    category = models.ManyToManyField('categories.Category', blank=True, null=True, verbose_name="Categoria")
 
     def __unicode__(self):
         return self.name
